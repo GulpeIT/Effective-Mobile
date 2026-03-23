@@ -30,22 +30,22 @@ class DataBaseConfig(BaseModel):
 class ApiPrefix(BaseModel):
     prefix: str
 
-class AuthorizationUser(BaseModel):
-    encoding_algorithm: str
-    main_secret: str
-    oauth_secret: str
-    verification_token: str
-    reset_password_token: str
-    access_token_expire_seconds: int
-    refresh_token_expire_seconds: int
-    api_token_expire_seconds: int
-    reset_mail_token_expire_seconds: int
-    bearer_path: str
+# class AuthorizationUser(BaseModel):
+#     encoding_algorithm: str
+#     main_secret: str
+#     oauth_secret: str
+#     verification_token: str
+#     reset_password_token: str
+#     access_token_expire_seconds: int
+#     refresh_token_expire_seconds: int
+#     api_token_expire_seconds: int
+#     reset_mail_token_expire_seconds: int
+#     bearer_path: str
 
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=(".env.template", '.env'),
+        env_file=('.env.template', '.env'),
         env_nested_delimiter='__',
         env_prefix='CONFIG__'
         )
