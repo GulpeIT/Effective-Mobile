@@ -15,7 +15,9 @@ dependencies = [
     "fastapi (>=0.135.1,<0.136.0)",
     "jwt (>=1.4.0,<2.0.0)",
     "uvicorn (>=0.42.0,<0.43.0)",
-    "black (>=26.3.1,<27.0.0)"
+    "black (>=26.3.1,<27.0.0)",
+    "setuptools @ file:///D:/Code/Extensions/Python/setuptools-77.0.3.tar.gz",
+    "asyncpg @ file:///D:/Code/Extensions/Python/asyncpg-0.31.0.tar.gz"
 ]
 
 
