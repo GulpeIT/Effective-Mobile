@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 class Role(Base):
     __tablename__ = 'roles'
     
-    id: Mapped[int] = mapped_column(primary_key=True)
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(unique=True)
     
     user: Mapped['User'] = relationship(

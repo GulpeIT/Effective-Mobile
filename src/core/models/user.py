@@ -8,9 +8,9 @@ if TYPE_CHECKING:
     from core.models import Role
 
 class User(Base):
-    __tablename__ = "users"
+    __tablename__ = 'users'
     
-    id: Mapped[int] = mapped_column(primary_key=True)
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     id_role: Mapped[int] = mapped_column(ForeignKey('roles.id'))
     name: Mapped[str]
     surname: Mapped[str]
