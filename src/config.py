@@ -27,8 +27,13 @@ class DataBaseConfig(BaseModel):
         "pk": "pk_%(table_name)s"
     }
 
+class V1Prefix(BaseModel):
+    prefix: str
+    auth: str
+
 class ApiPrefix(BaseModel):
     prefix: str
+    v1: V1Prefix 
 
 # class AuthorizationUser(BaseModel):
 #     encoding_algorithm: str
