@@ -9,15 +9,18 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "alembic (>=1.18.4,<2.0.0)",
-    "pydantic (>=2.12.5,<3.0.0)",
+    "pydantic[email] (>=2.12.5,<3.0.0)",
     "pydantic-settings (>=2.13.1,<3.0.0)",
     "sqlalchemy (>=2.0.48,<3.0.0)",
     "fastapi (>=0.135.1,<0.136.0)",
     "jwt (>=1.4.0,<2.0.0)",
     "uvicorn (>=0.42.0,<0.43.0)",
     "black (>=26.3.1,<27.0.0)",
-    "setuptools @ file:///D:/Code/Extensions/Python/setuptools-77.0.3.tar.gz",
-    "asyncpg @ file:///D:/Code/Extensions/Python/asyncpg-0.31.0.tar.gz"
+    "setuptools @ file:///C:/Code/Test%20task/Effective%20Mobile/Extension/setuptools-77.0.3.tar.gz",
+    "asyncpg @ file:///C:/Code/Test%20task/Effective%20Mobile/Extension/asyncpg-0.31.0.tar.gz",
+    "python-jose[cryptography] (>=3.5.0,<4.0.0)",
+    "passlib[bcrypt] (>=1.7.4,<2.0.0)",
+    "python-multipart (>=0.0.22,<0.0.23)",
 ]
 
 
