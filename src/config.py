@@ -30,23 +30,18 @@ class DataBaseConfig(BaseModel):
 class V1Prefix(BaseModel):
     prefix: str
     auth: str
+    user: str
+    admin: str
 
 class ApiPrefix(BaseModel):
     prefix: str
-    v1: V1Prefix 
+    v1: V1Prefix
 
-# class AuthorizationUser(BaseModel):
-#     encoding_algorithm: str
-#     main_secret: str
-#     oauth_secret: str
-#     verification_token: str
-#     reset_password_token: str
-#     access_token_expire_seconds: int
-#     refresh_token_expire_seconds: int
-#     api_token_expire_seconds: int
-#     reset_mail_token_expire_seconds: int
-#     bearer_path: str
-
+class AuthUser(BaseModel):
+    secret_key: str
+    algorithm: str
+    access_token_expire_minutes: int
+    bearer_path: str
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
@@ -64,8 +59,8 @@ class Settings(BaseSettings):
     # Управление префиксами
     api: ApiPrefix
     
-    #TODO
-    # auth_user : AuthorizationUser
+    # Авторизация пользователей
+    auth : AuthUser
     
     @property
     def DATABASE_URL_asyncpg(self):
