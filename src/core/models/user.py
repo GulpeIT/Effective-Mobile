@@ -4,6 +4,7 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column, relationship
 
+
 if TYPE_CHECKING:
     from core.models import Role
 

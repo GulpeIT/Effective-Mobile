@@ -1,20 +1,39 @@
-from pydantic import BaseModel
+from typing import Optional
+from pydantic import Field, field_validator
+from pydantic import (
+    BaseModel,
+    EmailStr,
+    ConfigDict
+)
 
-class CreateUser(BaseModel):
-    id_role: int = 1
+class UserCreate(BaseModel):
+    email: EmailStr
     name: str
     surname: str
     patronymic: str
-    password: str
-    email: str
-    is_active: bool = True
+    password: str = Field(..., min_length=6)
+    confirm_password: str
+    
+    
+    @field_validator('confirm_password')
+    def passwords_match(cls, v, values):
+        if 'password' in values and v != values['password']:
+            raise ValueError('Passwords do not match')
+        return 
 
-class User(BaseModel):
+
+class UserUpdate(BaseModel):
+    name: Optional[str] = None
+    patronymic: Optional[str] = None
+    surname: Optional[str] = None
+
+
+class UserOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
-    id_role: int
-    name: str
-    surname: str
-    patronymic: str
-    password: str
-    email: str
+    email: EmailStr
+    name: Optional[str] = None
+    patronymic: Optional[str] = None
+    surname: Optional[str] = None
     is_active: bool
